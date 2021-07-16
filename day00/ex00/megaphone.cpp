@@ -2,9 +2,9 @@
 
 int main(int argc, char *argv[]) {
 	if (argc > 1) {
-		for (int count = 1; count < argc; ++count) {
-			for (size_t i = 0; argv[count][i]; ++i) {
-				char c = argv[count][i];
+		for (int i = 1; i < argc; ++i) {
+			for (size_t j = 0; argv[i][j]; ++j) {
+				char c = argv[i][j];
 				std::cout << static_cast<char>(toupper(c));
 			}
 		}
