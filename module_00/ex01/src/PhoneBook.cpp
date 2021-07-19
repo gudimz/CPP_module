@@ -8,6 +8,7 @@ PhoneBook::~PhoneBook(void) {
 	return;
 }
 
+
 void PhoneBook::add(void) {
 	if (counter < 8) {
 	contacts[counter].addInfoContact();
@@ -24,6 +25,7 @@ void PhoneBook::add(void) {
 	}
 }
 
+
 void PhoneBook::search(void) {
 	if (counter == 0) {
 		std::cout << "Phonebook empty!" << std::endl;
@@ -34,7 +36,6 @@ void PhoneBook::search(void) {
 	std::cout << "Enter index, please: ";
 	std::string inp_index;
 	std::getline(std::cin, inp_index);
-
 	if (!inp_index.length()) {
 		std::cout << std::endl << "Exit in start menu!" << std::endl;
 		return;
@@ -56,13 +57,12 @@ void PhoneBook::search(void) {
 		std::cout << "Exit in start menu!" << std::endl;
 		return;
 	}
-
 	contacts[index - 1].printAllField();
 	std::cout << std::endl << "Exit in start menu!" << std::endl;
 }
 
-void PhoneBook::printTableContact(void) const {
 
+void PhoneBook::printTableContact(void) const {
 	std::cout << std::endl << "|----------|----------|----------|----------|" << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	std::cout << std::setw(40) <<"|----------|----------|----------|----------|" << std::endl;
