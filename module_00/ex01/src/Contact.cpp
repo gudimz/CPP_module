@@ -54,7 +54,7 @@ void Contact::setDarcestSecret(std::string& input) {
 void Contact::addInfoContact(void) {
 	std::string input;
 
-	std::cout << "Enter first name, please: ";
+	std::cout << std::endl << "Enter first name, please: ";
 	std::getline(std::cin, input);
 	this->_first_name = input;
 
@@ -74,5 +74,13 @@ void Contact::addInfoContact(void) {
 	std::getline(std::cin, input);
 	this->_darkest_secret = input;
 
-	std::cout << "New contact added successfully!" << std::endl;
+	std::cout << std::endl << "New contact added successfully!" << std::endl;
+}
+
+void Contact::printAllField(void) const {
+	std::cout << std::endl << "first name: " << getFirstName() << std::endl;
+	std::cout << "last name: " << getLastName() << std::endl;
+	std::cout << "nickname: " << getNickname() << std::endl;
+	std::cout << "phone number: " << getPhoneNumber() << std::endl;
+	std::cout << "darcest secret: " << getDarcestSecret() << std::endl;
 }

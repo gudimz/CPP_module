@@ -30,6 +30,7 @@ public:
 	void setDarcestSecret(std::string& input);
 
 	void addInfoContact(void);
+	void printAllField(void) const;
 };
 
 #endif
