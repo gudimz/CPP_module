@@ -1,6 +1,11 @@
+# include <string>
+# include <iostream>
+# include <iomanip>
+# include <sstream>
+# include "Contact.hpp"
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) : counter(0), oldest(0) {
+PhoneBook::PhoneBook(void) : _counter(0), _oldest(0) {
 	return;
 }
 
@@ -10,30 +15,30 @@ PhoneBook::~PhoneBook(void) {
 
 
 void PhoneBook::add(void) {
-	if (counter < 8) {
-	contacts[counter].addInfoContact();
-	++counter;
-	if (counter == 8) {
+	if (_counter < 8) {
+	_contacts[_counter].addInfoContact();
+	++_counter;
+	if (_counter == 8) {
 		std::cout << std::endl << "Phonebook is full!" << std::endl;
 	}
 	} else {
-		contacts[oldest].addInfoContact();
-		++oldest;
-		if (oldest == 8) {
-			oldest = 0;
+		_contacts[_oldest].addInfoContact();
+		++_oldest;
+		if (_oldest == 8) {
+			_oldest = 0;
 		}
 	}
 }
 
 
 void PhoneBook::search(void) {
-	if (counter == 0) {
+	if (_counter == 0) {
 		std::cout << "Phonebook empty!" << std::endl;
 	} else {
 		printTableContact();
 	}
 
-	std::cout << "Enter index, please: ";
+	std::cout << std::endl << "Enter index, please: ";
 	std::string inp_index;
 	std::getline(std::cin, inp_index);
 	if (!inp_index.length()) {
@@ -52,12 +57,12 @@ void PhoneBook::search(void) {
 	inpStream << inp_index;
 	inpStream >> index;
 
-	if (index < 1 || index > counter) {
+	if (index < 1 || index > _counter) {
 		std::cout << "There is no contact with such an index" << std::endl;
 		std::cout << "Exit in start menu!" << std::endl;
 		return;
 	}
-	contacts[index - 1].printAllField();
+	_contacts[index - 1].printAllField();
 	std::cout << std::endl << "Exit in start menu!" << std::endl;
 }
 
@@ -66,11 +71,11 @@ void PhoneBook::printTableContact(void) const {
 	std::cout << std::endl << "|----------|----------|----------|----------|" << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	std::cout << std::setw(40) <<"|----------|----------|----------|----------|" << std::endl;
-	for (int i = 0; i < counter; ++i) {
+	for (int i = 0; i < _counter; ++i) {
 		std::cout << "|" << std::setw(10) << i + 1;
-		checkLenField(contacts[i].getFirstName());
-		checkLenField(contacts[i].getLastName());
-		checkLenField(contacts[i].getNickname());
+		checkLenField(_contacts[i].getFirstName());
+		checkLenField(_contacts[i].getLastName());
+		checkLenField(_contacts[i].getNickname());
 		std::cout << "|" << std::endl << std::setw(40) <<
 		"|----------|----------|----------|----------|" << std::endl;
 	}

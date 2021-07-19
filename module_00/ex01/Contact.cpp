@@ -1,3 +1,6 @@
+# include <string>
+# include <iostream>
+# include <iomanip>
 #include "Contact.hpp"
 
 Contact::Contact(void) {

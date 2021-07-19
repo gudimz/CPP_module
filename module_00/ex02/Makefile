@@ -1,12 +1,12 @@
 .PHONY:		all re clean fclean
 
-NAME = phonebook
+NAME = account
 
 CXX = clang++
 
 CXXFLAGS = -Wall -Wextra -Werror -I -std=c++98
 
-FILES = main.cpp PhoneBook.cpp Contact.cpp
+FILES =  tests.cpp Account.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)
