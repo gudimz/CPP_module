@@ -9,21 +9,20 @@
 
 class PhoneBook {
 private:
+	Contact contacts[8];
 	int counter;
 	int oldest;
 	std::string trim;
 
-	void printTableContact(void) const;
 	void checkLenField(const std::string& field) const;
 
 public:
-	Contact contacts[8];
-
 	PhoneBook(void);
 	~PhoneBook(void);
 
 	void add(void);
 	void search(void);
+	void printTableContact(void) const;
 };
 
 

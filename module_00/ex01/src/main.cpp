@@ -8,12 +8,12 @@ int main (void)
 	PhoneBook phoneBook;
 	std::string cmd;
 
-	std::cout << std::endl << "Welcome to PhoneBook!" << std::endl;
-	std::cout << "Enter command, please: <ADD> <SEARCH> <EXIT>" << std::endl << std::endl;
+	std::cout << "Welcome to PhoneBook!" << std::endl;
+	std::cout << "Enter command: <ADD> <SEARCH> <EXIT>" << std::endl << std::endl;
 
 	while (21)
 	{
-		std::cout << "Enter CMD >> ";
+		std::cout << "command >> ";
 		std::getline(std::cin, cmd);
 		if (!cmd.compare("ADD")) {
 			phoneBook.add();
@@ -21,10 +21,8 @@ int main (void)
 			phoneBook.search();
 		} else if (!cmd.compare("EXIT")) {
 			break;
-		} else if (!cmd.length()) {
-			std::cout << "Enter command, please!";
 		} else if (cmd.length()) {
-			std::cout << "Bad command, please enter again!";
+			std::cout << "Bad command, please enter again!" << std::endl;
 		}
 	}
 }
