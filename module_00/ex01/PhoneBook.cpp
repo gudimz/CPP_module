@@ -1,8 +1,7 @@
-# include <string>
-# include <iostream>
-# include <iomanip>
-# include <sstream>
-# include "Contact.hpp"
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <sstream>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void) : _counter(0), _oldest(0) {
@@ -16,11 +15,11 @@ PhoneBook::~PhoneBook(void) {
 
 void PhoneBook::add(void) {
 	if (_counter < 8) {
-	_contacts[_counter].addInfoContact();
-	++_counter;
-	if (_counter == 8) {
-		std::cout << std::endl << "Phonebook is full!" << std::endl;
-	}
+		_contacts[_counter].addInfoContact();
+		++_counter;
+		if (_counter == 8) {
+			std::cout << std::endl << "Phonebook is full!" << std::endl;
+		}
 	} else {
 		_contacts[_oldest].addInfoContact();
 		++_oldest;
@@ -34,6 +33,7 @@ void PhoneBook::add(void) {
 void PhoneBook::search(void) {
 	if (_counter == 0) {
 		std::cout << "Phonebook empty!" << std::endl;
+		return;
 	} else {
 		printTableContact();
 	}

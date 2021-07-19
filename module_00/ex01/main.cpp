@@ -15,6 +15,10 @@ int main (void)
 	{
 		std::cout << "command >> ";
 		std::getline(std::cin, cmd);
+		if (std::cin.eof()) {
+			std::cout << std::endl;
+			break;
+		}
 		if (!cmd.compare("ADD")) {
 			phoneBook.add();
 		} else if (!cmd.compare("SEARCH")) {

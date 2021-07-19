@@ -8,7 +8,7 @@ Contact::Contact(void) {
 }
 
 Contact::~Contact(void) {
-	return ;
+	return;
 }
 
 
@@ -33,23 +33,23 @@ const std::string& Contact::getDarcestSecret(void) const {
 }
 
 
-void Contact::setFirstName(std::string& input) {
+void Contact::setFirstName(const std::string& input) {
 	this->_first_name = input;
 }
 
-void Contact::setLastName(std::string& input) {
+void Contact::setLastName(const std::string& input) {
 	this->_last_name = input;
 }
 
-void Contact::setNickname(std::string& input) {
+void Contact::setNickname(const std::string& input) {
 	this->_nickname = input;
 }
 
-void Contact::setPhoneNumber(std::string& input) {
+void Contact::setPhoneNumber(const std::string& input) {
 	this->_phone_number = input;
 }
 
-void Contact::setDarcestSecret(std::string& input) {
+void Contact::setDarcestSecret(const std::string& input) {
 	this->_darkest_secret = input;
 }
 
