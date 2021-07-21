@@ -1,12 +1,12 @@
 .PHONY:		all re clean fclean debug
 
-NAME = violence
+NAME = karen
 
 CXX = clang++
 
 CXXFLAGS = -Wall -Wextra -Werror -I -std=c++98
 
-FILES =  main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+FILES =  main.cpp Karen.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)
