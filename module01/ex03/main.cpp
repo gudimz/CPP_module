@@ -1,4 +1,5 @@
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main()
 {
