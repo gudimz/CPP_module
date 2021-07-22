@@ -1,6 +1,6 @@
 .PHONY:		all re clean fclean debug
 
-NAME = ex02
+NAME = brain
 
 CXX = clang++
 

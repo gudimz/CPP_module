@@ -12,7 +12,7 @@ private:
 	void error(void);
 
 	typedef void (Karen::*func)(void);
-	func funcs[4];
+	func _funcs[4];
 public:
 	Karen(void);
 	~Karen(void);

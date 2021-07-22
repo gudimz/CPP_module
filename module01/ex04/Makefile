@@ -6,7 +6,7 @@ CXX = clang++
 
 CXXFLAGS = -Wall -Wextra -Werror -I -std=c++98
 
-FILES =  main.cpp 
+FILES =  main.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)

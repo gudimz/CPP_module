@@ -7,8 +7,8 @@ int main(void) {
 
 	std::cout << "&str       " << &str << std::endl;
 	std::cout << "stringPTR  " << stringPTR << std::endl;
-	std::cout << "&stringREF " << &stringREF << std::endl << std::endl;
-
+	std::cout << "&stringREF " << &stringREF << std::endl <<
+	std::endl;
 	std::cout << "str        " << str << std::endl;
 	std::cout << "*stringPTR " << *stringPTR << std::endl;
 	std::cout << "stringREF  " << stringREF << std::endl;

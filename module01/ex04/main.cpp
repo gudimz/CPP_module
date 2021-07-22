@@ -2,6 +2,16 @@
 #include <iostream>
 #include <fstream>
 
+std::string lineReplace(std::string line, std::string s1, std::string s2) {
+	int pos = 0;
+
+	while ((pos = line.find(s1)) != -1) {
+		line.erase(pos, s1.length());
+		line.insert(pos, s2);
+	}
+	return line;
+}
+
 int main(int argc, char **argv) {
 	if (argc != 4) {
 		std::cout << "Error!" << std::endl << "Wrong number of arguments" << std::endl;
@@ -20,18 +30,18 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 	std::ofstream fileReplace(filename + ".replace");
-	std::string content;
+	std::string line;
 	int pos;
-	while (getline(file, content)) {
-		pos = content.find(s1);
+	while (getline(file, line)) {
+		pos = line.find(s1);
 		if (pos != -1) {
-			content.erase(pos, s1.length());
-			content.insert(pos, s2);
-			fileReplace << content << std::endl;
+			fileReplace << lineReplace(line, s1, s2);
 		} else {
-			fileReplace << content << std::endl;
+			fileReplace << line;
 		}
+		file.good() ? fileReplace << std::endl : fileReplace << "";
 	}
 	file.close();
+	fileReplace.close();
 	return 0;
 }

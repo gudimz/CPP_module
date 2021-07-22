@@ -1,10 +1,10 @@
 #include "Karen.hpp"
 
 Karen::Karen(void) {
-	Karen::funcs[0] = &Karen::debug;
-	Karen::funcs[1] = &Karen::info;
-	Karen::funcs[2] = &Karen::warning;
-	Karen::funcs[3] = &Karen::error;
+	Karen::_funcs[0] = &Karen::debug;
+	Karen::_funcs[1] = &Karen::info;
+	Karen::_funcs[2] = &Karen::warning;
+	Karen::_funcs[3] = &Karen::error;
 };
 
 Karen::~Karen(void) {};
@@ -50,6 +50,6 @@ void Karen::complain(std::string level) {
 	if (index < 0) {
 		std::cout << "Error! This level does not exist." << std::endl;
 	} else {
-		(this->*funcs[index])();
+		(this->*_funcs[index])();
 	}
 }
