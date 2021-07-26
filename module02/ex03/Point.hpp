@@ -10,18 +10,16 @@
 
 class Point {
 private:
-	Fixed _x;
-	Fixed _y;
+	Fixed const _x;
+	Fixed const _y;
 public:
 	Point(void);
 	Point(const float x, const float y);
 	Point(const Point& object);
 	~Point(void);
 
-	Point& operator=(const Point& object);
-
-	Fixed& getX(void);
-	Fixed& getY(void);
+	Fixed getX(void);
+	Fixed getY(void);
 };
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);
