@@ -1,10 +1,10 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("Nameless"), _hitpoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap(void) : _name("Nameless"), _hitpoints(100), _energyPoints(50), _attackDamage(20) {
 	std::cout << YEL "ClapTrap " << this->_name << REST << " created!" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitpoints(100), _energyPoints(50), _attackDamage(20) {
 	std::cout << YEL "ClapTrap " << this->_name << REST << " created!" << std::endl;
 }
 
