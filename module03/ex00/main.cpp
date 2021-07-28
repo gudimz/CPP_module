@@ -11,6 +11,8 @@ Nameless.attack("CopyMax");
 CopyMax.takeDamage(2);
 Max.attack("Nameless");
 Nameless.takeDamage(5);
+Max.attack("Nameless");
+Nameless.takeDamage(5);
 CopyMax.beRepaired(2);
 return 0;
 }
