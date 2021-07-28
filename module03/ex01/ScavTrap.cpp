@@ -1,16 +1,14 @@
 #include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap(void) {
-	_name = "Nameless";
+ScavTrap::ScavTrap(void) : ClapTrap() {
 	_hitpoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
 	std::cout << CYAN "ScavTrap " << this->_name << REST << " created!" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) {
-	_name = name;
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
 	_hitpoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
@@ -27,10 +25,7 @@ ScavTrap::~ScavTrap(void) {
 }
 
 ScavTrap& ScavTrap::operator=(ScavTrap const& object) {
-	this->_name = object._name;
-	this->_hitpoints = object._hitpoints;
-	this->_energyPoints = object._energyPoints;
-	this->_attackDamage = object._attackDamage;
+	ClapTrap::operator=(object);
 	return *this;
 }
 
