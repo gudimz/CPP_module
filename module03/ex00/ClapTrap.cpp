@@ -34,7 +34,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 	if (this->_hitpoints > amount) {
 		this->_hitpoints -= amount;
 		std::cout << "ClapTrap " YEL << this->_name << REST " takes " RED << amount << REST " points of damage!" <<
-		" He has left " CYAN << this->_hitpoints << " hit points!" REST << std::endl;
+		" He has left " CYAN << this->_hitpoints << REST " hit points!" << std::endl;
 	} else {
 		this->_hitpoints = 0;
 		std::cout << "ClapTrap " YEL << this->_name << REST " takes " RED << amount << REST " points of damage!" <<
@@ -43,6 +43,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	std::cout << "ClapTrap " << YEL << this->_name << REST << GREEN" ❤️  healed ❤️  " << amount <<
-	REST " hit points! He has left " CYAN << this->_hitpoints << REST" hit points!" << std::endl;
+	this->_hitpoints += amount;
+	std::cout << "ClapTrap " << YEL << this->_name << REST << GREEN " ❤️  repaired ❤️ " REST " by " GREEN << amount <<
+	REST " hit points! " << "He has left " CYAN << this->_hitpoints << REST" hit points!" << std::endl;
 }
