@@ -14,7 +14,9 @@ Dog::Dog(Dog const& object) {
 }
 
 Dog& Dog::operator=(Dog const& object) {
-	this->_type = object.getType();
+	if (this != &object) {
+		this->_type = object.getType();
+	}
 	return *this;
 }
 

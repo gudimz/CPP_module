@@ -14,7 +14,9 @@ WrongCat::WrongCat(WrongCat const& object) {
 }
 
 WrongCat& WrongCat::operator=(WrongCat const& object) {
-	this->_type = object.getType();
+	if (this != &object) {
+		this->_type = object.getType();
+	}
 	return *this;
 }
 

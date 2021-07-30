@@ -18,7 +18,9 @@ WrongAnimal::WrongAnimal(WrongAnimal const& object) {
 }
 
 WrongAnimal& WrongAnimal::operator=(WrongAnimal const& object) {
-	this->_type = object.getType();
+	if (this != &object) {
+		this->_type = object.getType();
+	}
 	return *this;
 }
 
