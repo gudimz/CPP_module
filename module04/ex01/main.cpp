@@ -45,15 +45,18 @@ int main( void ) {
 	std::cout << std::endl << GREEN "*** Test №3 << Deep copy  >> ***" REST << std::endl << std::endl;
 	std::cout << std::endl << YEL "*** Called constuctors ***" REST << std::endl;
 	Dog dog;
-	for (int i = 0; i < 100; ++i) {
+	for (int i = 0; i < 4; ++i) {
 		dog.getBrain()->setIdea(i, "I'll go eat");
 	}
 	Dog copyDog = dog;
 	std::cout << std::endl << YEL "*** Print idea ***" REST << std::endl;
-	for (int i = 0; i < 100; ++i) {
+	for (int i = 0; i < 4; ++i) {
 		std::cout << std::setw(2) << i <<MAG " Idea Dog: " REST << dog.getBrain()->getIdea(i) <<
 		CYAN "  Idea copyDog: " REST << copyDog.getBrain()->getIdea(i) << std::endl;
 	}
+	std::cout << std::endl << YEL "*** Print adress *_brain ***" REST << std::endl;
+	std::cout <<MAG " Adress *_brain Dog: " REST << dog.getBrain() <<
+		CYAN "  Adress *_brain copyDog: " REST << copyDog.getBrain() << std::endl;
 
 /***************************************************************************************/
 
