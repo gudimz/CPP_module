@@ -64,11 +64,7 @@ int main( void ) {
 	std::cout << std::endl << YEL "*** Print adress *_brain ***" REST << std::endl;
 	std::cout <<MAG " Adress *_brain Dog: " REST << dog.getBrain() <<
 		CYAN "  Adress *_brain copyDog: " REST << copyDog.getBrain() << std::endl;
-
+	std::cout << std::endl << YEL "*** Called destuctors ***" REST << std::endl;
 /***************************************************************************************/
-
-	std::cout << std::endl << GREEN "*** Test №4 << Leaks >> ***" REST << std::endl << std::endl;
-	system("leaks brain");
-	std::cout << GREEN "*** Test №5 << Call Destructor after test №3 ***" REST << std::endl << std::endl;
 	return 0;
 }

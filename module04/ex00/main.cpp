@@ -43,7 +43,5 @@ int main( void ) {
 	delete j;
 	delete meta;
 
-	std::cout << std::endl << YEL "*** Called leaks ***" REST << std::endl;
-	system("leaks animal");
 	return 0;
 }

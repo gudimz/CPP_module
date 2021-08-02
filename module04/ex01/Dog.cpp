@@ -17,7 +17,7 @@ Dog::Dog(Dog const& object) : Animal::Animal(object) {
 
 Dog& Dog::operator=(Dog const& object) {
 	if (this != &object) {
-		this->~Dog();
+		delete this->_brain;
 		this->_type = object.getType();
 		*_brain = *object.getBrain();
 	}
