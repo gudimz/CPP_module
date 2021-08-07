@@ -17,7 +17,7 @@ Cat::Cat(Cat const& object) : Animal::Animal(object) {
 
 Cat& Cat::operator=(Cat const& object) {
 	if (this != &object) {
-		this->~Cat();
+		delete this->_brain;
 		this->_type = object.getType();
 		*_brain = *object.getBrain();
 	}
