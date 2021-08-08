@@ -10,7 +10,7 @@ int main (void) {
 	try {
 		Intern intern;
 		Form *form;
-		form = intern.makeForm("shrubbery creation", "Bender");
+		form = intern.makeForm("shrubbery creation", "home");
 
 		std::cout << std::endl << YEL "*** Print info ***" REST << std::endl;
 		Bureaucrat Max("Max", 137);
@@ -24,7 +24,6 @@ int main (void) {
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
-
 	std::cout << std::endl << BACKG "*** Test №2 << Robotomy Request Form >> ***" REST << std::endl << std::endl;
 	try {
 		Intern intern;
@@ -40,6 +39,7 @@ int main (void) {
 		Max.signForm(*form);
 		Max.executeForm(*form);
 		delete form;
+		std::cout << "hey!" << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -48,7 +48,7 @@ int main (void) {
 	try {
 		Intern intern;
 		Form *form;
-		form = intern.makeForm("presidential pardon", "Bender");
+		form = intern.makeForm("presidential pardon", "Ford Prefect");
 
 		std::cout << std::endl << YEL "*** Print info ***" REST << std::endl;
 		Bureaucrat Max("Max", 5);

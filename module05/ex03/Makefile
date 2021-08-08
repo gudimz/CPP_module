@@ -22,6 +22,6 @@ clean:
 		rm -f $(OBJS)
 
 fclean: clean
-		rm -f ${NAME} Bender_shrubbery
+		rm -f ${NAME} home_shrubbery
 
 re: fclean all

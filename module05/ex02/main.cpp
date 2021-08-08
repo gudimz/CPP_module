@@ -10,7 +10,7 @@ int main (void) {
 		std::cout << std::endl << YEL "*** Print info ***" REST << std::endl;
 		Bureaucrat Max("Max", 150);
 		std::cout << Max << std::endl;
-		ShrubberyCreationForm form("form");
+		ShrubberyCreationForm form("home");
 		std::cout << form << std::endl;
 		std::cout << std::endl << YEL "*** Print actions ***" REST << std::endl;
 		Max.signForm(form);
@@ -24,7 +24,7 @@ int main (void) {
 		std::cout << std::endl << YEL "*** Print info ***" REST << std::endl;
 		Bureaucrat Max("Max", 46);
 		std::cout << Max << std::endl;
-		RobotomyRequestForm form("form");
+		RobotomyRequestForm form("Bender");
 		std::cout << form << std::endl;
 		std::cout << std::endl << YEL "*** Print actions ***" REST << std::endl;
 		Max.signForm(form);
@@ -38,7 +38,7 @@ int main (void) {
 		std::cout << std::endl << YEL "*** Print info ***" REST << std::endl;
 		Bureaucrat Max("Max", 137);
 		std::cout << Max << std::endl;
-		ShrubberyCreationForm form("form");
+		ShrubberyCreationForm form("home");
 		std::cout << form << std::endl;
 		std::cout << std::endl << YEL "*** Print actions ***" REST << std::endl;
 		Max.signForm(form);
@@ -52,7 +52,7 @@ int main (void) {
 		std::cout << std::endl << YEL "*** Print info ***" REST << std::endl;
 		Bureaucrat Max("Max", 45);
 		std::cout << Max << std::endl;
-		RobotomyRequestForm form("form");
+		RobotomyRequestForm form("Bender");
 		std::cout << form << std::endl;
 		std::cout << std::endl << YEL "*** Print actions ***" REST << std::endl;
 		Max.signForm(form);
@@ -66,7 +66,7 @@ int main (void) {
 		std::cout << std::endl << YEL "*** Print info ***" REST << std::endl;
 		Bureaucrat Max("Max", 5);
 		std::cout << Max << std::endl;
-		PresidentialPardonForm form("form");
+		PresidentialPardonForm form("Ford Prefect");
 		std::cout << form << std::endl;
 		std::cout << std::endl << YEL "*** Print actions ***" REST << std::endl;
 		Max.signForm(form);

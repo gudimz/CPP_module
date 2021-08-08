@@ -32,7 +32,7 @@ void RobotomyRequestForm::execute(Bureaucrat const& executor) const {
 	std::cout << "* LOUD DRILLING NOISE *" << std::endl;
 	std::srand(time(NULL));
 	if (!(rand() % 2)) {
-		std::cout << "Form " CYAN << _target
+		std::cout << CYAN << _target
 		<< REST GREEN " has been robotomized successfully 50\% of the time" REST << std::endl;
 	} else {
 		std::cout << "Form " CYAN << _target
