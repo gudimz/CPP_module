@@ -35,7 +35,7 @@ double TypeChar::castToDouble(void) const {
 }
 
 void TypeChar::printResult(void) const {
-	std::cout << "char: '" << _value << "'" << std::endl;
+	std::cout << "char: '" << castToChar() << "'" << std::endl;
 	std::cout << "int: " << castToInt() << std::endl;
 	std::cout << "float: " << castToFloat() << ".0f" << std::endl;
 	std::cout << "double: " << castToDouble() << ".0" << std::endl;

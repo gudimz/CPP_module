@@ -2,6 +2,7 @@
 #include "TypeChar.hpp"
 #include "TypeInt.hpp"
 #include "TypeFloat.hpp"
+#include "TypeDouble.hpp"
 
 bool checkInt(std::string strToConvert) {
 	for (size_t i = 0; i < strToConvert.length(); ++i) {
@@ -13,6 +14,32 @@ bool checkInt(std::string strToConvert) {
 		}
 	}
 	return true;
+}
+
+bool checkDouble(std::string strToConvert) {
+	if (strToConvert == "-inf" || strToConvert == "+inf" || strToConvert == "nan") {
+		return true;
+	}
+	size_t i = 0;
+	if (strToConvert[i] == '-' || strToConvert[i] == '+') {
+		++i;
+	}
+	while(strToConvert[i] && isdigit(strToConvert[i])) {
+		++i;
+	}
+	if (strToConvert[i] == '.') {
+		++i;
+	} else {
+		return false;
+	}
+	while(strToConvert[i] && isdigit(strToConvert[i])) {
+		++i;
+	}
+	if (i != strToConvert.length()) {
+		return false;
+	} else {
+		return true;
+	}
 }
 
 bool checkFloat(std::string strToConvert) {
@@ -53,6 +80,13 @@ bool isInt(std::string strToConvert) {
 	return false;
 }
 
+bool isDouble(std::string strToConvert) {
+	if (strToConvert.length() > 2 && checkDouble(strToConvert)) {
+		return true;
+	}
+	return false;
+}
+
 bool isFloat(std::string strToConvert) {
 	if (strToConvert.length() > 3 && checkFloat(strToConvert)) {
 		return true;
@@ -73,6 +107,8 @@ AConverter* createConvert(std::string strToConvert) {
 		return new TypeInt(strToConvert);
 	} else if (isFloat(strToConvert)) {
 		return new TypeFloat(strToConvert);
+	} else if (isDouble(strToConvert)) {
+		return new TypeDouble(strToConvert);
 	}
 	return 0;
 }
