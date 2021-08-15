@@ -1,8 +1,9 @@
 #include "AConverter.hpp"
 #include "TypeChar.hpp"
 #include "TypeInt.hpp"
+#include "TypeFloat.hpp"
 
-bool isNumber(std::string strToConvert) {
+bool checkInt(std::string strToConvert) {
 	for (size_t i = 0; i < strToConvert.length(); ++i) {
 		if ((i == 0) && (strToConvert[i] == '-' || strToConvert[i] == '+')) {
 			++i;
@@ -14,8 +15,46 @@ bool isNumber(std::string strToConvert) {
 	return true;
 }
 
+bool checkFloat(std::string strToConvert) {
+	if (strToConvert == "-inff" || strToConvert == "+inff" || strToConvert == "nanf") {
+		return true;
+	}
+	size_t i = 0;
+	if (strToConvert[i] == '-' || strToConvert[i] == '+') {
+		++i;
+	}
+	while(strToConvert[i] && isdigit(strToConvert[i])) {
+		++i;
+	}
+	if (strToConvert[i] == '.') {
+		++i;
+	} else {
+		return false;
+	}
+	while(strToConvert[i] && isdigit(strToConvert[i])) {
+		++i;
+	}
+	if (strToConvert[i] == 'f') {
+		++i;
+	} else {
+		return false;
+	}
+	if (i != strToConvert.length()) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
 bool isInt(std::string strToConvert) {
-	if (strToConvert.length() != 0 && isNumber(strToConvert)) {
+	if (strToConvert.length() != 0 && checkInt(strToConvert)) {
+		return true;
+	}
+	return false;
+}
+
+bool isFloat(std::string strToConvert) {
+	if (strToConvert.length() > 3 && checkFloat(strToConvert)) {
 		return true;
 	}
 	return false;
@@ -32,6 +71,8 @@ AConverter* createConvert(std::string strToConvert) {
 		return new TypeChar(strToConvert);
 	} else if (isInt(strToConvert)) {
 		return new TypeInt(strToConvert);
+	} else if (isFloat(strToConvert)) {
+		return new TypeFloat(strToConvert);
 	}
 	return 0;
 }

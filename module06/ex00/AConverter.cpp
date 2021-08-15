@@ -30,3 +30,11 @@ const char* AConverter::Impossible::what() const throw() {
 const char* AConverter::NonDisplayable::what() const throw() {
 	return "Non displayable";
 }
+
+const char* AConverter::Nan::what() const throw() {
+	return "nan";
+}
+
+const char* AConverter::Nanf::what() const throw() {
+	return "nanf";
+}

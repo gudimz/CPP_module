@@ -33,6 +33,16 @@ public:
 	public:
 		const char* what(void) const throw();
 	};
+
+	class Nan: public std::exception {
+	public:
+		const char* what(void) const throw();
+	};
+
+	class Nanf: public std::exception {
+	public:
+		const char* what(void) const throw();
+	};
 };
 
 #endif

@@ -43,7 +43,7 @@ float TypeInt::castToFloat(void) const {
 	if (_value > INT_MAX || _value < INT_MIN) {
 		throw Impossible();
 	} else {
-		return static_cast<double>(_value);
+		return static_cast<float>(_value);
 	}
 }
 
@@ -79,7 +79,7 @@ void TypeInt::printResult(void) const {
 	}
 	std::cout << "double: ";
 	try {
-		double d = castToFloat();
+		double d = castToDouble();
 		std::cout << d << ".0" << std::endl;
 	} catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
