@@ -26,7 +26,7 @@ char TypeFloat::castToChar(void) const {
 	char c = static_cast<char>(_value);
 	if (_strToConvert == "-inff" || _strToConvert == "+inff" || _strToConvert == "nanf") {
 		throw Impossible();
-	} else if (!isprint(c)) {
+	} else if (_value < 32 || _value > 126) {
 		throw NonDisplayable();
 	} else {
 		return c;

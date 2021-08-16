@@ -24,7 +24,7 @@ char TypeInt::castToChar(void) const {
 	char c = static_cast<char>(_value);
 	if (_value > INT_MAX || _value < INT_MIN) {
 		throw Impossible();
-	} else if (!isprint(c)) {
+	} else if (_value < 32 || _value > 126) {
 		throw NonDisplayable();
 	} else {
 		return c;
