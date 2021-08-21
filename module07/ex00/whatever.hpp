@@ -4,26 +4,19 @@
 # include <iostream>
 
 template <typename T>
-void swap(T& a, T& b) {
-	T tmp;
-	tmp = a;
+void swap(T & a, T & b) {
+	T tmp = a;
 	a = b;
 	b = tmp;
 }
 
 template <typename T>
-T& min(T &a, T &b) {
-	if (a == b) {
-		return b;
-	}
+T const& min(T const& a, T const& b) {
 	return a < b ? a : b;
 }
 
 template <typename T>
-T& max(T &a, T &b) {
-	if (a == b) {
-		return b;
-	}
+T const& max(T const& a, T const& b) {
 	return a > b ? a : b;
 }
 
