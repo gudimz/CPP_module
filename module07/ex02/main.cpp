@@ -62,7 +62,8 @@ int main(int, char**)
 	for (int i = 0; i < MAX_VAL; i++) {
         myNumbers[i] = i;
 	}
-    Array<int> copyMyNumbers = myNumbers;
+    Array<int> copyMyNumbers;
+    copyMyNumbers = myNumbers;
 	std::cout << YEL "size" REST << " myNumbers: " YEL << myNumbers.size() << REST << std::endl;
 	std::cout << YEL "size" REST << " copyMyNumbers: " YEL << copyMyNumbers.size() << REST << std::endl;
     std::cout << "myNumbers[" GREEN << "21" REST << "]: " << GREEN << myNumbers[21] << REST << std::endl;
