@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Array.hpp"
-#include <sstream>
 
 # define GREEN "\x1b[1;32m"
 # define RED "\x1b[1;31m"
@@ -66,10 +65,26 @@ int main(int, char**)
     copyMyNumbers = myNumbers;
 	std::cout << YEL "size" REST << " myNumbers: " YEL << myNumbers.size() << REST << std::endl;
 	std::cout << YEL "size" REST << " copyMyNumbers: " YEL << copyMyNumbers.size() << REST << std::endl;
-    std::cout << "myNumbers[" GREEN << "21" REST << "]: " << GREEN << myNumbers[21] << REST << std::endl;
-	std::cout << "copyMyNumbers[" GREEN << "21" REST << "]: " << GREEN << copyMyNumbers[21] << REST << std::endl;
-    std::cout << "myNumbers[" GREEN << "42" REST << "]: " << GREEN << myNumbers[42] << REST << std::endl;
-	std::cout << "copyMyNumbers[" GREEN << "42" REST << "]: " << GREEN << copyMyNumbers[42] << REST << std::endl;
+    try {
+        std::cout << "myNumbers[" GREEN << "21" REST << "]: " << GREEN << myNumbers[21] << REST << std::endl;
+    } catch(const std::exception& e) {
+        std::cerr << e.what() << '\n';
+    }
+    try {
+        std::cout << "copyMyNumbers[" GREEN << "21" REST << "]: " << GREEN << copyMyNumbers[21] << REST << std::endl;
+    } catch(const std::exception& e) {
+        std::cerr << e.what() << '\n';
+    }
+    try {
+        std::cout << "myNumbers[" GREEN << "42" REST << "]: " << GREEN << myNumbers[42] << REST << std::endl;
+    } catch(const std::exception& e) {
+        std::cerr << e.what() << '\n';
+    }
+    try {
+        std::cout << "copyMyNumbers[" GREEN << "42" REST << "]: " << GREEN << copyMyNumbers[42] << REST << std::endl;
+    } catch(const std::exception& e) {
+        std::cerr << e.what() << '\n';
+    }
 
     return 0;
 }

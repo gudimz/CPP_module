@@ -1,6 +1,6 @@
 .PHONY:		all re clean fclean debug
 
-NAME = array
+NAME = iter
 
 CXX = clang++
 
