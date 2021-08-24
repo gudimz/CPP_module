@@ -45,6 +45,13 @@ public:
 		}
 		return _array[index];
 	}
+
+	T const& operator[](const unsigned int index) const {
+		if (index >= _size || index < 0) {
+			throw std::exception();
+		}
+		return _array[index];
+	}
 	unsigned int size(void) const {
 		return _size;
 	}
