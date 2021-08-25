@@ -49,5 +49,4 @@ int main(void) {
 	test(array, 10);
 	test(array, 0);
 	return 0;
-
 }
