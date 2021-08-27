@@ -36,8 +36,8 @@ public:
 		}
 	}
 
-	unsigned long shortestSpan(void) const;
-	unsigned long longestSpan(void) const;
+	unsigned long shortestSpan(void);
+	unsigned long longestSpan(void);
 
 	class isFullException: public std::exception {
 	public:

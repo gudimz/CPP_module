@@ -26,13 +26,14 @@ void Span::addNumber(int number) {
 	}
 }
 
-unsigned long Span::shortestSpan(void) const {
+unsigned long Span::shortestSpan(void) {
 	if (_numbers.size() < 2) {
 		throw isNotEnoughNumbersException();
 	}
 
 	std::vector<int>::const_iterator iter;
 	int result = longestSpan();
+	std::sort(_numbers.begin(), _numbers.end());
 	for (iter = _numbers.begin(); (iter + 1) != _numbers.end(); ++iter) {
 		if (result > std::abs(*(iter + 1) - *iter)) {
 			result = std::abs(*(iter + 1) - *iter);
@@ -41,7 +42,7 @@ unsigned long Span::shortestSpan(void) const {
 	return result;
 }
 
-unsigned long Span::longestSpan(void) const {
+unsigned long Span::longestSpan(void) {
 	if (_numbers.size() < 2) {
 		throw isNotEnoughNumbersException();
 	}
